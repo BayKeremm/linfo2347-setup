@@ -43,9 +43,17 @@ echo
 software_message="\e[33mVerifying and installing necessary software...\e[0m"
 echo -e "$software_message"
 
+# Check if curl is installed
+if command_exists curl; then
+    echo -e "\e[32mcurl is already installed.\e[0m"
+else
+    echo -e "\e[31mcurl is not installed. Installing curl...\e[0m"
+    sudo apt-get install -y curl
+fi
+
 dvwa_message="\e[33mDVWA installer \e[0m"
 echo -e "$dvwa_message"
-#sudo bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/IamCarron/DVWA-Script/main/Install-DVWA.sh)"
+sudo bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/IamCarron/DVWA-Script/main/Install-DVWA.sh)"
 
 # Check if Python is installed
 if command_exists python3; then
