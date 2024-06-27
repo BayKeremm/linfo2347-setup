@@ -146,7 +146,6 @@ fi
 
 install_package_if_needed bind9
 install_package_if_needed bind9utils
-install_package_if_needed bind9utils-doc
 install_package_if_needed openssh-server
 
 
