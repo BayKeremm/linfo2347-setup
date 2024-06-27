@@ -1,0 +1,12 @@
+1: on root-me
+2: +
+3: +
+	- Do not need two computers, with the bridged adapter the guest can poison the arp table of host
+4: +
+5: +
+6: +
+7: +
+8: +
+9: +
+10: dnssec -r option deprecated
+

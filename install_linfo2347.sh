@@ -116,7 +116,23 @@ else
     sudo ln /usr/bin/ovs-testcontroller /usr/bin/controller
 fi
 
+if command_exists vsftpd; then
+    echo -e "\e[32mvsftpd is already installed.\e[0m"
+else
+    echo -e "\e[31mvsftpd is not installed. Installing vsftpd...\e[0m"
+    sudo apt-get install -y vsftpd
+fi
+
+if command_exists ntp; then
+    echo -e "\e[32mntp is already installed.\e[0m"
+else
+    echo -e "\e[31mntp is not installed. Installing ntp...\e[0m"
+    sudo apt-get install -y ntp
+fi
+
 install_package_if_needed bind9
+install_package_if_needed bind9utils
+install_package_if_needed bind9utils-doc
 
 
 # Check if yaf is installed
@@ -185,6 +201,7 @@ optional_packages=(
     python3-pyx
     python3-ecdsa
     python3-sklearn
+    python3-paramiko
     python3-sklearn-lib
 )
 
