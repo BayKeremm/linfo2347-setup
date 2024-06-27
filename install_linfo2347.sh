@@ -103,6 +103,20 @@ else
     sudo apt-get install -y snort
 fi
 
+if command_exists vim; then
+    echo -e "\e[32mvim is already installed.\e[0m"
+else
+    echo -e "\e[31mvim is not installed. Installing vim...\e[0m"
+    sudo apt-get install -y vim
+fi
+
+if command_exists ifconfig; then
+    echo -e "\e[32mifconfig is already installed.\e[0m"
+else
+    echo -e "\e[31mifconfig is not installed. Installing ifconfig...\e[0m"
+    sudo apt-get install -y net-tools
+fi
+
 # Check if mininet is installed
 if command_exists mn; then
     echo -e "\e[32mmininet is already installed.\e[0m"
@@ -133,6 +147,7 @@ fi
 install_package_if_needed bind9
 install_package_if_needed bind9utils
 install_package_if_needed bind9utils-doc
+install_package_if_needed openssh-server
 
 
 # Check if yaf is installed
