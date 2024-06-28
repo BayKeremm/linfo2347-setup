@@ -27,7 +27,7 @@ install_package_if_needed() {
         echo -e "\e[32m$package is already installed.\e[0m"
     else
         echo -e "\e[31m$package is not installed. Installing $package...\e[0m"
-        sudo apt-get install -y "$package"
+        sudo apt install -y "$package"
     fi
 }
 
@@ -48,7 +48,7 @@ if command_exists curl; then
     echo -e "\e[32mcurl is already installed.\e[0m"
 else
     echo -e "\e[31mcurl is not installed. Installing curl...\e[0m"
-    sudo apt-get install -y curl
+    sudo apt install -y curl
 fi
 
 dvwa_message="\e[33mDVWA installer \e[0m"
@@ -60,7 +60,7 @@ if command_exists python3; then
     echo -e "\e[32mPython is already installed.\e[0m"
 else
     echo -e "\e[31mPython is not installed. Installing Python...\e[0m"
-    sudo apt-get install -y python3
+    sudo apt install -y python3
 fi
 
 # Check if Java is installed
@@ -68,7 +68,7 @@ if command_exists java; then
     echo -e "\e[32mjava is already installed.\e[0m"
 else
     echo -e "\e[31mjava is not installed. Installing Java...\e[0m"
-    sudo apt-get install -y default-jre
+    sudo apt install -y default-jre
 fi
 
 # Check if Javac is installed
@@ -76,7 +76,7 @@ if command_exists javac; then
     echo -e "\e[32mjavac is already installed.\e[0m"
 else
     echo -e "\e[31mjavac is not installed. Installing javac...\e[0m"
-    sudo apt-get install -y default-jdk
+    sudo apt install -y default-jdk
 fi
 
 # Check if pip is installed
@@ -84,7 +84,7 @@ if command_exists pip; then
     echo -e "\e[32mpip is already installed.\e[0m"
 else
     echo -e "\e[31mpip is not installed. Installing pip...\e[0m"
-    sudo apt-get install -y python3-pip
+    sudo apt install -y python3-pip
 fi
 
 # Check if scapy is installed
@@ -92,7 +92,7 @@ if command_exists scapy; then
     echo -e "\e[32mscapy is already installed.\e[0m"
 else
     echo -e "\e[31mscapy is not installed. Installing scapy...\e[0m"
-    sudo apt-get install -y python3-scapy
+    sudo apt install -y python3-scapy
 fi
 
 # Check if snort is installed
@@ -100,21 +100,21 @@ if command_exists snort; then
     echo -e "\e[32msnort is already installed.\e[0m"
 else
     echo -e "\e[31msnort is not installed. Installing snort...\e[0m"
-    sudo apt-get install -y snort
+    sudo apt install -y snort
 fi
 
 if command_exists vim; then
     echo -e "\e[32mvim is already installed.\e[0m"
 else
     echo -e "\e[31mvim is not installed. Installing vim...\e[0m"
-    sudo apt-get install -y vim
+    sudo apt install -y vim
 fi
 
 if command_exists ifconfig; then
     echo -e "\e[32mifconfig is already installed.\e[0m"
 else
     echo -e "\e[31mifconfig is not installed. Installing ifconfig...\e[0m"
-    sudo apt-get install -y net-tools
+    sudo apt install -y net-tools
 fi
 
 # Check if mininet is installed
@@ -122,11 +122,11 @@ if command_exists mn; then
     echo -e "\e[32mmininet is already installed.\e[0m"
 else
     echo -e "\e[31mmininet is not installed. Installing mininet...\e[0m"
-    sudo apt-get install -y mininet
-    sudo apt-get install -y openvswitch-switch
+    sudo apt install -y mininet
+    sudo apt install -y openvswitch-switch
     # TODO: is this service start necessary ? 
     sudo service openvswitch-switch start
-    sudo apt-get install -y openvswitch-testcontroller
+    sudo apt install -y openvswitch-testcontroller
     sudo ln /usr/bin/ovs-testcontroller /usr/bin/controller
 fi
 
@@ -134,14 +134,14 @@ if command_exists vsftpd; then
     echo -e "\e[32mvsftpd is already installed.\e[0m"
 else
     echo -e "\e[31mvsftpd is not installed. Installing vsftpd...\e[0m"
-    sudo apt-get install -y vsftpd
+    sudo apt install -y vsftpd
 fi
 
 if command_exists ntp; then
     echo -e "\e[32mntp is already installed.\e[0m"
 else
     echo -e "\e[31mntp is not installed. Installing ntp...\e[0m"
-    sudo apt-get install -y ntp
+    sudo apt install -y ntp
 fi
 
 install_package_if_needed bind9
@@ -158,7 +158,7 @@ else
 
     # Preliminaries
     echo -e "\e[33mInstalling preliminary packages...\e[0m"
-    # Add any preliminary installations here if needed, e.g., sudo apt-get install some-package
+    # Add any preliminary installations here if needed, e.g., sudo apt install some-package
 
     # Install glib2
     install_package_if_needed libglib2.0-dev
