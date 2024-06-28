@@ -144,7 +144,7 @@ else
     sudo apt install -y ntp
 fi
 
-install_package_if_needed bind9
+sudo apt install -y bind9
 install_package_if_needed bind9utils
 install_package_if_needed openssh-server
 
