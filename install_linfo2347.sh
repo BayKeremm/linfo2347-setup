@@ -137,12 +137,8 @@ else
     sudo apt-get install -y vsftpd
 fi
 
-if command_exists ntp; then
-    echo -e "\e[32mntp is already installed.\e[0m"
-else
-    echo -e "\e[31mntp is not installed. Installing ntp...\e[0m"
-    sudo apt-get install -y ntp
-fi
+
+install_package_if_needed ntp
 
 install_package_if_needed bind9
 install_package_if_needed bind9utils
