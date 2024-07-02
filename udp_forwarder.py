@@ -4,7 +4,7 @@ import socket
 HOST_IP = '192.168.1.28'  # Replace with your host IP
 VM_IP = '10.211.55.16'    # Replace with your VM IP
 HOST_PORT = 1234          # The port on which to listen on the host
-VM_PORT = 53              # The port to which to forward packets on the VM
+VM_PORT = 53              # The VM is the nameserver in the lab so it listens to default DNS port 53 
 
 # Create two UDP sockets: one for receiving from host and another for receiving from VM
 sock_host = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
