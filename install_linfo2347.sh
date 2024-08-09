@@ -43,6 +43,10 @@ echo
 software_message="\e[33mVerifying and installing necessary software...\e[0m"
 echo -e "$software_message"
 
+sudo apt update
+
+sudo apt upgrade
+
 # Check if curl is installed
 if command_exists curl; then
     echo -e "\e[32mcurl is already installed.\e[0m"
